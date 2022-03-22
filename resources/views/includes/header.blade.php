@@ -12,10 +12,6 @@
                         <a class="nav-link {{ request()->routeIs('comics.index') ? 'active' : '' }}"
                             aria-current="page" href="{{ route('comics.index') }}">Home</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link {{ request()->routeIs('comics.show') ? 'active' : '' }}"
-                            aria-current="page" href="{{ route('comics.index') }}">Comic</a>
-                    </li>
                 </ul>
                 <form class="d-flex">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">

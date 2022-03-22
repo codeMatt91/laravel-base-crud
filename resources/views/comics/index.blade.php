@@ -5,6 +5,9 @@
 @section('content')
     <div class="container">
         <div class="my-4">
+            <div class="d-flex align-items-center justify-content-end">
+                <a href="{{ route('comics.create') }}" class="btn btn-danger">Aggiungi Comic</a>
+            </div>
             <div class="row">
                 @forelse ($comics as  $comic)
                     <div class="col-12 d-flex">
