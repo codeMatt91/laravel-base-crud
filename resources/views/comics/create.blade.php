@@ -8,7 +8,7 @@
             @csrf
             <div class="mb-4">
                 <label for="title" class="form-label">Titolo</label>
-                <input type="text" id="title" placeholder="Inserisci un titolo">
+                <input type="text" id="title" placeholder="Inserisci un titolo" name="title">
             </div>
             <div class="mb-4">
                 <label for="thumb" class="form-label">Foto</label>
@@ -34,10 +34,10 @@
             <div class="mb-4">
                 <label for="text-area" class="form-label">Descrizione</label> <br>
                 <textarea class="form-control" id="text-area" rows="3" placeholder="Inserisci una descrizione"
-                    name="'description"></textarea>
+                    name="description"></textarea>
             </div>
-            <a href="" type="submit" class="btn btn-danger">Invia</a>
-            <a href="" class="btn btn-success" type="reset">Svuota</a>
+            <button type="submit" class="btn btn-danger">Invia</button>
+            <button href="" class="btn btn-success" type="reset">Svuota</button>
         </form>
     </div>
 @endsection

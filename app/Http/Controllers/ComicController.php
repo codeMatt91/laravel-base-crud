@@ -37,7 +37,11 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();  // Mi crea un array associativo con tutti i dati che passo nel form
+
+        $comic = Comic::create($data); // Posso usarla solo se ho usato la funzione fillable nel Model
+
+        return redirect()->route('comics.show', $comic->id);
     }
 
     /**
