@@ -9,8 +9,12 @@
             <div class="collapse navbar-collapse" id="navbarScroll">
                 <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
                     <li class="nav-item">
-                        <a class="nav-link {{ request()->routeIs('home') ? 'active' : '' }}" aria-current="page"
-                            href="{{ url('/') }}">Home</a>
+                        <a class="nav-link {{ request()->routeIs('comics.index') ? 'active' : '' }}"
+                            aria-current="page" href="{{ route('comics.index') }}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ request()->routeIs('comics.show') ? 'active' : '' }}"
+                            aria-current="page" href="{{ route('comics.index') }}">Comic</a>
                     </li>
                 </ul>
                 <form class="d-flex">
