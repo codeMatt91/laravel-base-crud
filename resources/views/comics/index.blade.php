@@ -16,7 +16,7 @@
                                 <img src="{{ $comic->thumb }}" alt="{{ $comic->title }}">
                             </figure>
                         </div>
-                        <div>
+                        <div class="ms-3">
                             <a href="{{ route('comics.show', $comic->id) }}">
                                 <h4>{{ $comic->title }}</h4>
                             </a>
