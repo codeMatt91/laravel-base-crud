@@ -80,10 +80,10 @@ class ComicController extends Controller
     {
 
         $request->validate([
-            'title' => ['require', 'string','max:50','min:5'],
+            'title' => ['required', 'string','max:50','min:5'],
             'description' => ['string','min:5'],
             'thumb' => ['string','min:15'],
-            'price' => ['require', 'numeric','max:999','min:1'],
+            'price' => ['required', 'numeric','max:999','min:1'],
             'sale_date' => ['date','string','max:10','min:6'],
             'type' => ['string','min:5'],
         ],[

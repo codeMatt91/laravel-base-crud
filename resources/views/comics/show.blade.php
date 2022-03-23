@@ -20,6 +20,7 @@
                 </div>
             </div>
         </div>
+        <a href='{{ route('comics.edit', $comic->id) }}' class="btn btn-danger">Modifica</a>
         <a href="{{ route('comics.index') }}" class="btn btn-danger">Torna in home</a>
     </div>
 @endsection
