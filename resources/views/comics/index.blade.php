@@ -26,8 +26,9 @@
                                 <div>Genere : {{ $comic->type }}</div>
                             </div>
                             <div>
-                                <a class="btn btn-sm btn-warning" href="{{ route('comics.edit', $comic->id) }}"><i
-                                        class="fa-solid fa-pencil"></i></a>
+                                <a class="btn btn-sm btn-warning" href="{{ route('comics.edit', $comic->id) }}">
+                                    <i class="fa-solid fa-pencil"></i>
+                                </a>
                             </div>
                         </div>
                     </div>

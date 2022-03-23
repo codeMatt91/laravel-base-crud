@@ -66,7 +66,7 @@ class ComicController extends Controller
     {
         $comic= Comic::findOrFail($id);
 
-        return view('comics.edit', compact($comic->id));
+        return view('comics.edit', compact('comic')); // brutto bastardo il copmpact fa riferimento ad un array associativo
     }
 
     /**
@@ -76,12 +76,19 @@ class ComicController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Comic $comic )
+    public function update(Request $request, $id )
     {
-        $data = $request->all();
-        $comic->update($data);
 
-        return redirect()->route('comics.show', $comic);
+        
+
+
+        $comic = Comic::findOrFail($id);
+        
+        $data = $request->all();
+        $comic->fill($data);
+        $comic->save();
+
+        return redirect()->route('comics.show', $comic->id);
     }
 
     /**
