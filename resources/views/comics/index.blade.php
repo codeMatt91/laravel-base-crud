@@ -3,6 +3,11 @@
 @section('title', 'Home')
 
 @section('content')
+    @if (session('message'))
+        <div class="alert alert-{{ session('type') }}">
+            {{ session('message') }}
+        </div>
+    @endif
     <div class="container">
         <div class="my-4">
             <div class="d-flex align-items-center justify-content-end mb-4">
@@ -30,6 +35,12 @@
                                     <i class="fa-solid fa-pencil"></i>
                                 </a>
                             </div>
+                            <form action="{{ route('comics.destroy', $comic->id) }}" method="post">
+                                @method('DELETE')
+                                @csrf
+                                <button class="btn btn-sm btn-danger" type="submit"><i
+                                        class="fa-solid fa-trash"></i></button>
+                            </form>
                         </div>
                     </div>
                 @empty
