@@ -3,6 +3,15 @@
 @section('title', 'Form di modifica')
 
 @section('content')
+    @if ($error->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($error->any() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
     <div class="container">
         <form action="{{ route('comics.update', $comic->id) }}" method="POST" class="my-5">
             @method('PUT')
