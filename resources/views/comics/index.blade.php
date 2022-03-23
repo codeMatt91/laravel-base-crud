@@ -5,25 +5,30 @@
 @section('content')
     <div class="container">
         <div class="my-4">
-            <div class="d-flex align-items-center justify-content-end">
+            <div class="d-flex align-items-center justify-content-end mb-4">
                 <a href="{{ route('comics.create') }}" class="btn btn-danger">Aggiungi Comic</a>
             </div>
             <div class="row">
                 @forelse ($comics as  $comic)
-                    <div class="col-12 d-flex">
+                    <div class="col-6 d-flex">
                         <div>
                             <figure>
                                 <img src="{{ $comic->thumb }}" alt="{{ $comic->title }}">
                             </figure>
                         </div>
                         <div class="ms-3">
-                            <a href="{{ route('comics.show', $comic->id) }}">
-                                <h4>{{ $comic->title }}</h4>
-                            </a>
-                            <div>Data publicazione: {{ date('m-d-y', strtotime($comic->sale_date)) }}</div>
-                            <div>Prezzo: {{ $comic->price }}</div>
-                            <div>Genere : {{ $comic->type }}</div>
-                            <p>{{ $comic->description }}</p>
+                            <div class="d-flex flex-column align-items-between">
+                                <a href="{{ route('comics.show', $comic->id) }}">
+                                    <h5>{{ $comic->title }}</h5>
+                                </a>
+                                <div>Data publicazione: {{ date('m-d-y', strtotime($comic->sale_date)) }}</div>
+                                <div>Prezzo: {{ $comic->price }}</div>
+                                <div>Genere : {{ $comic->type }}</div>
+                            </div>
+                            <div>
+                                <a class="btn btn-sm btn-warning" href="{{ route('comics.edit', $comic->id) }}"><i
+                                        class="fa-solid fa-pencil"></i></a>
+                            </div>
                         </div>
                     </div>
                 @empty
